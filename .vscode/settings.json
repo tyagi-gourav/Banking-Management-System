@@ -1,0 +1,9 @@
+{
+    "java.project.sourcePaths": [
+        "src"
+    ],
+    "java.project.referencedLibraries": [
+        "lib\\jcalendar-1.4.jar",
+        "h:\\JAVA PROJECT\\Banking Management System\\lib\\jcalendar-1.4.jar"
+    ]
+}
