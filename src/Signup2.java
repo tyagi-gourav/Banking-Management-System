@@ -1,8 +1,8 @@
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.*;
 
 public class Signup2 extends JFrame implements ActionListener {
 
@@ -16,7 +16,7 @@ public class Signup2 extends JFrame implements ActionListener {
 
     String formno;
     
-    Signup2(String frst){
+    Signup2(String formno){
         super("APPLICATION FORM");
 
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/bank.png"));
@@ -26,7 +26,7 @@ public class Signup2 extends JFrame implements ActionListener {
         image.setBounds(150,5,100,100);
         add(image);
 
-        this.formno = frst;
+        this.formno = formno;
 
         JLabel l1 = new JLabel("Page 2");
         l1.setFont(new Font ("Raleway",Font.BOLD,22));
@@ -162,13 +162,13 @@ public class Signup2 extends JFrame implements ActionListener {
         buttonGroup2.add(e2);
          
         JLabel l12 = new JLabel("Form No :");
-        l12.setFont(new Font ("Raleway",Font.BOLD,18));
-        l12.setBounds(700,10,100,30);
+        l12.setFont(new Font ("Raleway",Font.BOLD,14));
+        l12.setBounds(680,10,100,30);
         add(l12);
 
         JLabel l13 = new JLabel(formno);
-        l13.setFont(new Font ("Raleway",Font.BOLD,14));
-        l13.setBounds(760,10,30,30);
+        l13.setFont(new Font ("Raleway",Font.BOLD,12));
+        l13.setBounds(750,10,100,30);
         add(l13);
 
         next =new JButton("Next");
@@ -217,9 +217,9 @@ public class Signup2 extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(null,"Fill all the fields");
             }else{
                 Conn c1 = new Conn();
-                String q="insert into Signuptwo values('"+formno+"','"+rel+"','"+cat+"','"+inc+"','"+edu+"','"+occ+"','"+pan+"','"+addhar+"','"+scitizen+"','"+eAccount+"');
+                String q="insert into signuptwo values('"+formno+"','"+rel+"','"+cat+"','"+inc+"','"+edu+"','"+occ+"','"+pan+"','"+addhar+"','"+scitizen+"','"+eAccount+"')";
                 c1.statement.executeUpdate(q);
-                new signup3(formno);
+                new Signup3(formno);
                 setVisible(false);
             }
                 

@@ -1,8 +1,8 @@
-import javax.swing.*;
 import java.awt.*;
-import java.util.Random;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
+import javax.swing.*;
 
 public class Signup3 extends JFrame implements ActionListener{
 
@@ -190,8 +190,15 @@ public class Signup3 extends JFrame implements ActionListener{
         String atype = null;
         if(r1.isSelected()){
             atype ="Saving Account";
-        }else if(r2.isSelected()){
+        } else if(r2.isSelected()){
             atype="Fixed Deposit Account";
+        } else if(r3.isSelected()){
+            atype="Current Account";
+        } else if(r4.isSelected()){
+            atype="Recurring Deposit Account";
+        } else {
+            JOptionPane.showMessageDialog(null,"Please select an Account Type");
+            return; 
         }
 
         Random ran = new Random();
@@ -223,7 +230,7 @@ public class Signup3 extends JFrame implements ActionListener{
                 }else{
                     Conn c1=new Conn();
                     Conn c2=new Conn();
-                    String q1="insert into signupthree values('"+formno+"','"+atype+"','"+cardno+"'+'"+pin+"'+'"+fac+"')";
+                    String q1="insert into signupthree values('"+formno+"','"+atype+"','"+cardno+"','"+pin+"','"+fac+"')";
                     String q2="insert into login values('"+formno+"','"+cardno+"','"+pin+"')";
                     c1.statement.executeUpdate(q1);
                     c2.statement.executeUpdate(q2);
